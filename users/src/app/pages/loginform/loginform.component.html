@@ -1,0 +1,27 @@
+<div class="loginbox">
+  <h1>Login Here</h1>
+  <p>Email</p>
+  <input
+    type="text"
+    [(ngModel)]="email"
+    id="email"
+    placeholder="Email"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <p>Password</p>
+  <input
+    type="password"
+    [(ngModel)]="pass"
+    [ngModelOptions]="{ standalone: true }"
+    id="pass"
+    placeholder="Password"
+  />
+  <input
+    type="button"
+    name="submit"
+    value="Login"
+    (click)="userVendorLogin(email, pass)"
+  />
+  <a href="#">Forgot your password?</a><br />
+  <a href="#">Don't have an account?</a>
+</div>

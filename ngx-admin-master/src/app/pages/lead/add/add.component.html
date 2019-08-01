@@ -1,0 +1,135 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Add Lead</nb-card-header>
+      <nb-card-body>
+        <form class="form-horizontal">
+          <div class="form-group row">
+            <label class="label col-sm-3 form-control-label">Name</label>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                name="name"
+                [(ngModel)]="name"
+                nbInput
+                fullWidth
+                placeholder="Name"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="label col-sm-3 form-control-label">Mobile</label>
+            <div class="col-sm-9">
+              <input
+                type="number"
+                name="mbl"
+                [(ngModel)]="mbl"
+                nbInput
+                fullWidth
+                placeholder="Mobile"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="label col-sm-3 form-control-label">Scope</label>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                name="scope"
+                [(ngModel)]="scope"
+                nbInput
+                fullWidth
+                placeholder="Scope"
+              />
+            </div>
+          </div>
+
+          <!-- <div class="form-group row">
+            <label class="label col-sm-3 form-control-label">Category</label>
+            <div class="col-sm-9">
+              <select *ngIf="category" name="cat" [(ngModel)]="cat">
+                <option *ngFor="let i of category.data">{{ i.name }}</option>
+              </select>
+            </div>
+          </div> -->
+
+          <div class="form-group row">
+            <label class="label col-sm-3 form-control-label">Category</label>
+            <div class="col-sm-9">
+              <ng-multiselect-dropdown
+                name="catlist"
+                [data]="dropdownList.data"
+                [(ngModel)]="selectedItems"
+                [settings]="dropdownSettings"
+                (onSelect)="onItemSelect($event)"
+                (onSelectAll)="onSelectAll($event)"
+              >
+              </ng-multiselect-dropdown>
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label class="label col-sm-3 form-control-label">Location</label>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                name="location"
+                [(ngModel)]="location"
+                nbInput
+                fullWidth
+                placeholder="Location"
+              />
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label class="label col-sm-3 form-control-label">Time</label>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                name="time"
+                [(ngModel)]="time"
+                nbInput
+                fullWidth
+                placeholder="Time"
+              />
+            </div>
+          </div>
+
+            <div class="form-group row">
+            <label class="label col-sm-3 form-control-label">Price</label>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                name="time"
+                [(ngModel)]="price"
+                nbInput
+                fullWidth
+                placeholder="price"
+              />
+            </div>
+          </div>
+
+
+
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <button
+                type="submit"
+                nbButton
+                status="warning"
+                (click)="leadAdd(name, mbl, scope,location,time,price)"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

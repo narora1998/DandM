@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Generate Ticket</nb-card-header>
+      <nb-card-body>
+        <form class="form-horizontal">
+          <div class="form-group row">
+            <label class="label col-sm-3 form-control-label">Title</label>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                nbInput
+                fullWidth
+                name="title"
+                [(ngModel)]="title"
+                placeholder="Title"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="label col-sm-3 form-control-label">Description</label>
+            <div class="col-sm-9">
+              <textarea     
+                style="padding-left: 5px;padding-top: 5px;"  
+                nbInput
+                fullWidth          
+                rows="10"
+                name="description"
+                [(ngModel)]="description"
+                placeholder="Add you comments here ...."
+              >
+              </textarea>
+
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <button
+                type="submit"
+                nbButton
+                status="warning"
+                (click)="generateTicket(title,description)"
+              >
+                Generate
+              </button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
